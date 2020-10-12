@@ -3,10 +3,6 @@ import { useState } from "react";
 import Edulist from "./EduList";
 
 const EduForm = (props) => {
-  // const [education, setEduData] = useState({
-  //   edudata: { degree: "", place: "", graduation: "", grade: "" },
-  // });
-
   const [eduitem, setEduItem] = useState({});
 
   const [education, setEduData] = useState({ edudata: [] });
@@ -28,7 +24,7 @@ const EduForm = (props) => {
   const deleteItem = (item) => {
     console.log(item);
     console.log(education.edudata);
-    setEduData(education.edudata.filter((eduitem) => eduitem !== item));
+    // setEduData(education.edudata.filter((eduitem) => eduitem !== item));
   };
 
   return (

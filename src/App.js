@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import "./styles/app.module.css";
 import DataForm from "./components/UserData/DataForm";
 import EduForm from "./components/UserEdu/EduForm";
 

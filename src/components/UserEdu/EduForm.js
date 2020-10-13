@@ -7,24 +7,34 @@ const EduForm = (props) => {
 
   const [education, setEduData] = useState({ edudata: [] });
 
+  const [id, setId] = useState(0);
+
   const onChange = (e) => {
     setEduItem({
       ...eduitem,
       [e.target.name]: e.target.value,
+      id: id,
     });
   };
 
   const onSubmit = (e) => {
     setEduData({ edudata: [...education.edudata, eduitem] });
-    props.addData(education);
-    console.log(education);
+    props.addData(education.edudata);
+    setId(id + 1);
     e.preventDefault();
   };
 
   const deleteItem = (item) => {
-    console.log(item);
-    console.log(education.edudata);
-    // setEduData(education.edudata.filter((eduitem) => eduitem !== item));
+    const arr = education.edudata.filter((eduitem) => eduitem.id !== item.id);
+    setEduData({ edudata: arr });
+
+    // for (let i = 0; i < education.edudata.length; i++) {
+    //   if (item.id === education.edudata[i].id) {
+    //     console.log(education.edudata[i].id);
+    //     setEduData(education.edudata.splice(i));
+    //   }
+    // }
+    // setEduData(education.edudata.filter((eduitem) => eduitem.id !== item.id));
   };
 
   return (
@@ -34,9 +44,7 @@ const EduForm = (props) => {
         <h5>Bitte geben sie ihren Bildungsweg ein</h5>
         <form className="form-group" onSubmit={onSubmit}>
           <div className="py-3">
-            <label htmlFor="" className="px-1">
-              Studiengang / Ausbildung
-            </label>
+            <label className="px-1">Studiengang / Ausbildung</label>
             <input
               onChange={onChange}
               type="text"

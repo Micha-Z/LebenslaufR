@@ -7,7 +7,7 @@ const EduItem = (props) => {
     props.deleteItem(props.item);
   };
   return (
-    <Fragment>
+    <>
       <div className="row px-2">
         <div className="alert alert-primary py-2" role="alert">
           Abschluss: {graduation} | Studiengang: {degree} | Note: {grade} | Ort:
@@ -17,7 +17,7 @@ const EduItem = (props) => {
           </button>
         </div>
       </div>
-    </Fragment>
+    </>
   );
 };
 

@@ -6,6 +6,8 @@ const DataForm = (props) => {
     userdata: { name: "", email: "", address: "" },
   });
 
+  const [alert, setAlert] = useState(false);
+
   const onChange = (e) => {
     setUserData({
       userdata: { ...user.userdata, [e.target.name]: e.target.value },
@@ -13,6 +15,8 @@ const DataForm = (props) => {
   };
   const onSubmit = (e) => {
     props.addData(user);
+    setAlert(true);
+    setTimeout(() => setAlert(false), 3000);
     console.log(user);
     e.preventDefault();
   };
@@ -67,9 +71,12 @@ const DataForm = (props) => {
             />
           </div>
         </form>
-        {/* <div className="alert alert-success" style={display:none} role="alert">
-          Ihre Daten wurden gespeichert!
-        </div> */}
+
+        {alert && (
+          <div className="alert alert-success" role="alert">
+            Ihre Daten wurden gespeichert!
+          </div>
+        )}
       </div>
     </div>
   );

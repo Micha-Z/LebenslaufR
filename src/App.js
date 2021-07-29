@@ -14,6 +14,8 @@ function App() {
     setData({ ...data, ...item });
   };
 
+  console.log(data);
+
   return (
     <div className="App d-flex">
       <div className="container">

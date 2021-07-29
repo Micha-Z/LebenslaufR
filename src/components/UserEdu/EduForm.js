@@ -47,9 +47,10 @@ const EduForm = (props) => {
             <label className="px-1">Studiengang / Ausbildung</label>
             <input
               onChange={onChange}
+              id="degree"
               type="text"
               name="degree"
-              className="form-control p-2"
+              className="form-control test p-2"
               placeholder="z.B. Informatik"
             />
           </div>
@@ -59,9 +60,10 @@ const EduForm = (props) => {
             </label>
             <input
               onChange={onChange}
+              id="place"
               type="text"
               name="place"
-              className="form-control "
+              className="form-control test"
               placeholder="z.B. Universität Heidelberg"
             />
           </div>

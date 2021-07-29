@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 const EduItem = (props) => {
   const { degree, grade, graduation, place } = props.item;
